@@ -13,7 +13,7 @@ session_start();
         $selectUserlogin="SELECT `username`,`profile` FROM `tbuser` WHERE `email`='$email'";
         $exe=$con->query($selectUserlogin);
         $user=$exe->fetch_assoc();
-    global $user;
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

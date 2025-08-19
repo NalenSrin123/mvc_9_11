@@ -6,7 +6,7 @@
             <section class="product-section">
                 <div class="section-header">
                     <h2 class="section-title">Products</h2>
-                    <button class="btn btn-primary" onclick="showForm()">+ Add Product</button>
+                    <button class="btn btn-primary" id="btnAdd" onclick="showForm()">+ Add Product</button>
                 </div>
 
                 <div class="controls">
@@ -49,7 +49,7 @@
                                 <td>15</td>
                                 <td>
                                     <div class="actions">
-                                        <button class="btn btn-secondary btn-sm">Edit</button>
+                                        <button class="btn btn-secondary btn-sm" id="btnEdit">Edit</button>
                                         <button class="btn btn-danger btn-sm">Delete</button>
                                     </div>
                                 </td>
@@ -62,33 +62,37 @@
   <div class="product-form" id="productForm">
         <div class="form-container">
             <div class="form-header">
-                <h3>Add New Product</h3>
+                <h3 id="title"></h3>
             </div>
-            <form>
+            <form action="../../../app/Controller/ProductController/function.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="form-label">Product Name</label>
-                    <input type="text" class="form-input" placeholder="Enter product name">
+                    <input type="text" name="name" class="form-input" placeholder="Enter product name">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Price</label>
-                    <input type="number" class="form-input" placeholder="0.00" step="0.01">
+                    <input type="number" name="price" class="form-input" placeholder="0.00" step="0.01">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Stock Quantity</label>
-                    <input type="number" class="form-input" placeholder="0">
+                    <input type="number" name="qty" class="form-input" placeholder="0">
                 </div>
                  <div class="form-group">
                     <label class="form-label">Image</label>
-                    <input type="file" class="form-input" placeholder="0">
+                    <input type="file" name="image" class="form-input" placeholder="0">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-textarea" placeholder="Enter product description"></textarea>
+                    <textarea class="form-textarea" name="des" placeholder="Enter product description"></textarea>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" onclick="hideForm()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Product</button>
+                    <input type="submit" name="btn" id="add" class="btn btn-primary" value="Save Product">
+                    <input type="submit" name="btn" id="edit" class="btn btn-primary" value="Edit Product">
                 </div>
             </form>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../../js//productModal.js"></script>
