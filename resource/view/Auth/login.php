@@ -14,7 +14,7 @@
                 <p class="text-gray-600">Please sign in to your account</p>
             </div>
             
-            <form class="space-y-6">
+            <form class="space-y-6" action="../../../app/Controller/UserController/loginController.php" method="post">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
                         Email Address

@@ -1,6 +1,6 @@
 <?php 
     $con=new mysqli('localhost','root','','db_mvc');
-    if($con){
-        echo 'Success';
-    }
+    // if($con){
+    //     echo 'Success';
+    // }
 ?>
