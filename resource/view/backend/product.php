@@ -1,4 +1,70 @@
-  
+<style>
+    .modal-delete{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(194, 194, 194, 0.59);
+    position: absolute;
+    top: 0;
+    z-index: 222;
+    display: none;
+    form{
+        width: 550px;
+        background-color: #fff;
+        margin:auto;
+        padding:10px 30px;
+        border-radius: 5px;
+        animation: drop 0.5s forwards;
+        h2{
+            font-size: 20px;
+            color: #333;
+        }
+        .form-group{
+            display: flex;
+            justify-content: end;
+            margin-top: 15px;
+            gap: 10px;
+            button{
+                padding: 10px;
+                border: none;
+                background-color: #f51d1dff;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 18px;
+                cursor: pointer;
+                transition: all ease-in-out 0.2s;
+            }
+            button:hover{
+                background-color: #bc1212ff;
+            }
+            
+            button:nth-child(1){
+                background-color: #c5c4c4ff;
+            }
+            button:nth-child(1):hover{
+                background-color: #838181ff;
+            }
+        }
+    }
+} 
+@keyframes drop{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(50px);
+    }
+}
+</style>
+<div class="modal-delete">
+    <form action="../../../app/Controller/ProductController/delete.php" method="post">
+        <h2>Are you sure to delete this product?</h2>
+        <input type="hidden" name="delete_id" id="delete_id">
+        <div class="form-group">
+            <button type="button" id="cancel">Cancel</button>
+            <button name="delete">Delete</button>
+        </div>
+    </form>
+</div>
 <?php 
     include 'sidebar.php';
     include '../../../app/Controller/ProductController/function.php';
@@ -114,6 +180,16 @@
                  $('#qty').val(t_qty);
                  $('#hide_image').val(t_image);
                  $('#des').val(t_des); 
+            })
+
+            // delete
+            $(document).on('click','#btnDelete',function(){
+                $('.modal-delete').show();
+                let id=$(this).attr('pro-id');
+                $('#delete_id').val(id);
+            })
+            $('#cancel').click(function(){
+                $('.modal-delete').hide();
             })
         })
     </script>

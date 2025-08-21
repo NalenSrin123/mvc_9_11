@@ -40,7 +40,7 @@ session_start();
                         <a href="#" class="nav-link">📋 Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">📈 Analytics</a>
+                        <a href="../frontend/index.php" class="nav-link">🌐 Website</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">⚙️ Settings</a>

@@ -58,7 +58,7 @@
                         <td>
                             <div class="actions">
                                 <button type="button" class="btn btn-secondary btn-sm" id="btnEdit">Edit</button>
-                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <button class="btn btn-danger btn-sm" pro-id="'.$row['product_id'].'" id="btnDelete">Delete</button>
                             </div>
                         </td>
                     </tr>
@@ -70,4 +70,9 @@
             </tr>';
         }
     }
+
+
+    // get front
+
+    
 ?>

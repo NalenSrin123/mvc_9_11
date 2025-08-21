@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    if(!empty($_SESSION['login'])){
+        if($_SESSION['role']==1){
+            echo '<script>window.location.href="../backend/Dashboard.php"</script>';
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
